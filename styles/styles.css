@@ -26,6 +26,23 @@ body {
     z-index: 1000;
 }
 
+.quadrado {
+    width: 200px;
+    height: 280px;
+    background-color: #611529;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none; 
+    border-bottom-right-radius: 10px;
+    z-index: 200;
+}
+
+
 .quadrado.aberto {
     opacity: 1;
     transform: translateY(0);
@@ -39,6 +56,25 @@ body {
     pointer-events: none;
 }
 
+.cate {
+    height: 25px;
+    border-bottom: 1px solid #260b12;
+}
+.fa-shirt {
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    display: block;
+    padding-right: 10px;
+    margin: 10px auto;
+}
+
+.fa-shirt:hover {
+    font-size: 15px;
+    color: #a19f9f;
+    display: block;
+    margin: 10px auto;
+}
 
 
 .filtros {
