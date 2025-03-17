@@ -1,0 +1,221 @@
+html, body {
+    height: 100%; /* Garante que o body ocupe toda a altura da página */
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.barra-cima {
+    background-color: #611529;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.filtros {
+    width: 250px;
+    height: 60vh;
+    background-color: white;
+    box-sizing: border-box;
+    border-bottom-right-radius: 10px;
+    border-right: 1px solid #4f4e4e;
+    border-bottom: 1px solid #4f4e4e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    z-index: 100;
+}
+
+.produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 80px 20px 20px 280px; /* Ajuste para não cobrir filtros e barra superior */
+    flex-grow: 1; /* Faz com que a área de produtos cresça para preencher o restante da altura */
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas por linha */
+    gap: 45px; /* Espaçamento entre os produtos */
+    max-width: 800px;
+    margin-top: -20px;
+}
+
+.produto {
+    position: relative;
+    transform: translateX(-80px);
+    width: 180px;
+    height: 250px;
+    border: 1px solid #260b12;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Alteração: empilha os itens verticalmente */
+    justify-content: space-between; /* Distribui os itens de forma equitativa */
+    padding: 10px; /* Adiciona um pouco de espaço interno */
+    overflow: hidden;
+}
+
+.produto:hover{
+    background-color: #ebe8e8;
+}
+
+.produto img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: -100px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.produto h3, .produto p {
+    position: relative;
+    z-index: 2;
+    color: black;
+    margin: 5px 0; /* Adiciona espaçamento entre os elementos de texto */
+}
+
+.produto h3 {
+    font-size: 16px;
+    margin-bottom: 10px; /* Ajuste no espaçamento entre o título e a descrição */
+}
+
+.produto p {
+    font-size: 14px;
+}
+
+.barra-baixo {
+    position: relative;
+    background-color: #611529;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    z-index: 1000;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+.quadrado {
+    width: 200px;
+    height: 280px;
+    background-color: #611529;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none; 
+    border-bottom-right-radius: 10px;
+    z-index: 200;
+}
+
+
+.quadrado.aberto {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; 
+}
+
+
+.quadrado.fechar {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+
+
+.icons-right {
+    display: flex;
+    gap: 25px; 
+    align-items: center;
+}
+
+.fa-bars, .fa-basket-shopping, .fa-user {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.fa-bars:hover, .fa-basket-shopping:hover, .fa-user:hover {
+    color: #a19f9f;
+    transform: scale(1.2);
+}
+
+.cate {
+    height: 25px;
+    border-bottom: 1px solid #260b12;
+}
+
+.fa-shirt {
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    display: block;
+    padding-right: 10px;
+    margin: 10px auto;
+}
+
+.fa-shirt:hover {
+    font-size: 15px;
+    color: #a19f9f;
+    display: block;
+    margin: 10px auto;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #260b12;
+    padding: 5px;
+    border-radius: 25px;
+    height: 25px;
+    width: 250px;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+    background: none;
+    color: white;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.search-bar i {
+    font-size: 18px;
+}
